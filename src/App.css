@@ -7,15 +7,46 @@
   pointer-events: none;
 }
 
+.label_tag {
+  font-size: 20px;
+  margin-top: 9px;
+}
+.form {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+}
+.input_field {
+  margin-left: 10px;
+  width: 400px;
+  padding: 10px;
+  border-radius: 20px;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.results {
+  display: flex;
+  flex-direction: column;
+  border: 10px double black;
+  margin-left: 500px;
+  margin-right: 500px;
+  border-radius: 25px;
+}
+
+.result_tag {
+  font-size: large;
+  font-weight: bold;
+  background: #2c2c2d;
+  color: rgb(220, 215, 215);
+  margin: 10px;
+}
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+
   display: flex;
   flex-direction: column;
   align-items: center;

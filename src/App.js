@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import Form from "./components/Form";
+import Result from "./components/Result";
 
 function App() {
+  const regex = /^[-.,0-9,\S]+$/;
+  const [value, setValue] = useState([]);
+  const arrOfNum = [];
+
+  function userInput(userInput, resetField) {
+    const data = userInput.split(" ").join("").split(",");
+    if (!regex.test(userInput)) {
+      alert("invalid data entered");
+      resetField("");
+      return;
+    }
+
+    const isValid = data.find(
+      (ele) => ele === "" || ele.startsWith(".") || ele.endsWith(".")
+    );
+    if (typeof isValid !== "undefined") {
+      alert("invalid data entered");
+      resetField("");
+      return;
+    }
+
+    data.forEach((num) => {
+      arrOfNum.push(Number(num));
+    });
+    setValue(arrOfNum);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Form data={userInput} />
+      <Result data={value} />
     </div>
   );
 }
