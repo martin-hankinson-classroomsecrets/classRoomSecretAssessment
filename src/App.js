@@ -4,8 +4,9 @@ import Form from "./components/Form";
 import Result from "./components/Result";
 
 function App() {
-  const regex = /^[-.,0-9,\S]+$/;
+  const regex = /^[-.,0-9]+$/;
   const [value, setValue] = useState([]);
+
   const arrOfNum = [];
 
   function userInput(userInput, resetField) {
@@ -28,7 +29,17 @@ function App() {
     data.forEach((num) => {
       arrOfNum.push(Number(num));
     });
-    setValue(arrOfNum);
+
+    arrOfNum.forEach((num) => {
+      if (isNaN(num)) {
+        alert("invalid decimal value !! Try again");
+        resetField("");
+        setValue([]);
+        return;
+      } else {
+        setValue(arrOfNum);
+      }
+    });
   }
 
   return (

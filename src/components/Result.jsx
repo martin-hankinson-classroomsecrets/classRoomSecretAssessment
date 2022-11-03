@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Result(props) {
+export default function Result({ data }) {
   const mean = (arr) => {
     let total = 0;
     for (let i = 0; i < arr.length; i++) {
@@ -46,11 +46,11 @@ export default function Result(props) {
   return (
     <div>
       <h1>Results :</h1>
-      {props.data.length === 0 ? null : (
+      {data.length === 0 ? null : (
         <div className="results">
-          <p className="result_tag">Mean is : {mean(props.data)}</p>
-          <p className="result_tag">Median is : {median(props.data)}</p>
-          <p className="result_tag">Mode is : {mode(props.data)}</p>
+          <p className="result_tag">Mean is : {mean(data)}</p>
+          <p className="result_tag">Median is : {median(data)}</p>
+          <p className="result_tag">Mode is : {mode(data)}</p>
         </div>
       )}
     </div>
