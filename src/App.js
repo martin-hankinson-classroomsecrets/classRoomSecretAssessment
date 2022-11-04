@@ -7,7 +7,7 @@ function App() {
   const regex = /^[-.,0-9]+$/;
   const [value, setValue] = useState([]);
 
-  const arrOfNum = [];
+  let arrOfNum = [];
 
   function userInput(userInput, resetField) {
     const data = userInput.split(" ").join("").split(",");
@@ -27,19 +27,16 @@ function App() {
     }
 
     data.forEach((num) => {
-      arrOfNum.push(Number(num));
-    });
-
-    arrOfNum.forEach((num) => {
       if (isNaN(num)) {
         alert("invalid decimal value !! Try again");
         resetField("");
-        setValue([]);
+        arrOfNum = [];
         return;
-      } else {
-        setValue(arrOfNum);
       }
+      arrOfNum.push(Number(num));
     });
+
+    setValue(arrOfNum);
   }
 
   return (
