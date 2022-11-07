@@ -1,16 +1,14 @@
-# To run this project get started with Create React App
+# To run this project
 
-## Available Scripts
+Run `npm i` to install all dependencies.
 
-In the project directory, you can run:
+Then in the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
+This will runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.
 
 ### user can enter data in integer, negative and positive etc to find mean, median and mode.
 
-A number should be seperated by comma and no space.
+A number should be seperated by comma and no space. Basic valida for user input is provided with alert.
