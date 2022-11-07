@@ -19,7 +19,8 @@ export default function Form({ data }) {
         <h1>Class Room Secrets Assessment</h1>
         <form onSubmit={formSubmitHandler} className="form">
           <label className="label_tag">
-            Enter data (no space) to find mean, media and mode
+            Enter data (no space and seperated by comma) to find mean, media and
+            mode
           </label>
           <input
             value={userInput}
